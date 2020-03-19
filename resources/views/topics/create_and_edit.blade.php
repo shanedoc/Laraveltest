@@ -82,6 +82,7 @@
                 },
                 pasteImage: true,
             });
+
         });
     </script>
 @stop
