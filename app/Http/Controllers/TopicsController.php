@@ -29,10 +29,9 @@ class TopicsController extends Controller
     {
         // URL 矫正
         if ( !empty($topic->slug) && $topic->slug != $request->slug) {
-            dd($topic->link());
             return redirect($topic->link(), 301);
         }
-        return redirect()->to($topic->link())->with('success', '成功创建话题！');
+        return view('topics.show', compact('topic'));
     }
 
 	public function create(Topic $topic)
