@@ -22,7 +22,7 @@ class RepliesController extends Controller
 	    if(empty($content)){
             return redirect()->back()->with('danger', '回复内容错误！');
         }
-        $reply->content = $content; //$request->content;
+        $reply->content = $content;  //$request->content;
         $reply->user_id = Auth::id();
         $reply->topic_id = $request->topic_id;
         $reply->save();
