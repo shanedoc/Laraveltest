@@ -38,7 +38,7 @@ class TranslateSlug implements ShouldQueue
     {
         Log::info('jobs in');
         $slug = app(SlugTranslateHandler::class)->translate($this->topic->title);
-        DB::table('topic')->where('id',$this->topic->id)->update([
+        DB::table('topics')->where('id',$this->topic->id)->update([
             'slug'=>$slug
         ]);
     }
